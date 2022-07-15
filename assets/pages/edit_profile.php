@@ -10,12 +10,12 @@
             </div>
             <h1 class="h5 mt-4 mb-3 fw-normal">Edit Profile</h1>
             <?php
-            if(isset($_GET['success'])){
-                ?>
+            if (isset($_GET['success'])) {
+            ?>
                 <p class="text-success"> Profile is Updated </p>
 
 
-<?php 
+            <?php
             }
 
             ?>
@@ -24,7 +24,7 @@
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Change Profile Picture</label>
                     <input class="form-control" type="file" name="profile_pic" id="formFile">
-                    
+
                 </div>
             </div>
             <?php echo showerror('profile_pic');  ?>
@@ -88,3 +88,22 @@
     </div>
 
 </div>
+
+
+<script>
+    var videoPlayer = document.getElementById("videoPlayer");
+    var myVideo = document.getElementById("myVideo");
+
+
+
+    function stopVideo() {
+        videoPlayer.style.display = "none";
+        myVideo.pause();
+    }
+
+    function playVideo(file) {
+        myVideo.src = file;
+        myVideo.play();
+        videoPlayer.style.display = "block";
+    }
+</script>

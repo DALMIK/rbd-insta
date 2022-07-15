@@ -9,8 +9,9 @@ global $user;
 
 <div class="container mt-8 col-md-9 col-sm-11 rounded-0">
     <div class="col-12 rounded p-4 m-4 d-flex gap-5">
-        <div class="col-md-4 col-sm-12 d-flex justify-content-center mx-auto align-items-start">
-            <div class="px-md-5"></div><img src="assets/images/profile/<?= $profile['profile_pic'] ?>" class="img-thumbnail rounded-circle my-3" style="height:150px; width:150px" alt="...">
+        <div id="profile-image" class=" col-md-4 col-sm-12 d-flex justify-content-center mx-auto align-items-start">
+
+            <img src="assets/images/profile/<?= $profile['profile_pic'] ?>" class="img-thumbnail rounded-circle my-3" style="height:150px; width:150px" alt="...">
         </div>
         <div class="col-md-8 col-sm-11 mt-4">
             <div class="d-flex flex-column">
@@ -63,7 +64,7 @@ global $user;
 
 
     </div>
- 
+
     <h5 class="border-bottom">Posts</h5>
 
     <?php
@@ -90,7 +91,7 @@ global $user;
 
 
                             <div class="col-md-4 col-sm-12 d-flex flex-column">
-                                <div class="d-flex align-items-center p-2 <?=$post['post_text']?'':'border-bottom'?>">
+                                <div class="d-flex align-items-center p-2 <?= $post['post_text'] ? '' : 'border-bottom' ?>">
                                     <div><img src="assets/images/profile/<?= $profile['profile_pic'] ?>" alt="" width="50" height="50" class="rounded-circle border">
                                     </div>
                                     <div>&nbsp;&nbsp;&nbsp;</div>
@@ -265,3 +266,21 @@ global $user;
         </div>
     </div>
 </div>
+
+<script>
+    var videoPlayer = document.getElementById("videoPlayer");
+    var myVideo = document.getElementById("myVideo");
+
+
+
+    function stopVideo() {
+        videoPlayer.style.display = "none";
+        myVideo.pause();
+    }
+
+    function playVideo(file) {
+        myVideo.src = file;
+        myVideo.play();
+        videoPlayer.style.display = "block";
+    }
+</script>

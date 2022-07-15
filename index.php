@@ -23,7 +23,7 @@ $pagecount = count($_GET);
 //manage pages 
 
 if(isset($_SESSION['Auth']) && $user['ac_status']==1 && !$pagecount){
-    showPage('header',['page_title'=>'Wall']);
+    showPage('header', ['page_title' => 'rbdInsta']);
     showPage('navbar');
     showPage('wall');
 }elseif(isset($_SESSION['Auth']) && $user['ac_status']==0 && !$pagecount){
@@ -63,7 +63,7 @@ if(isset($_SESSION['Auth']) && $user['ac_status']==1 && !$pagecount){
     showPage('forgot_password');
 }else{
     if(isset($_SESSION['Auth']) && $user['ac_status']==1){
-        showPage('header',['page_title'=>'Wall']);
+        showPage('header', ['page_title' => 'rbdInsta']);
         showPage('navbar');
         showPage('wall');
     }elseif(isset($_SESSION['Auth']) && $user['ac_status']==0){

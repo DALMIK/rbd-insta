@@ -1,6 +1,17 @@
 //  for preview the post image
 let input = document.querySelector("#select_post_img");
 let image = document.querySelector("#post_img");
+const instaTv = document.getElementById("instaTV");
+const sideNav = document.getElementById("side-Navigation");
+
+instaTv.addEventListener("click", () => {
+    sideNav.classList.toggle("active");
+    instaTv.classList.toggle("insta-active");
+});
+
+
+
+
 
 input.addEventListener("change", preview);
 
@@ -36,6 +47,7 @@ $(".followbtn").click(function() {
             if (response) {
                 $(button).data("userId", 0);
                 $(button).text("Following");
+                // $(button).attr("disabled", true);
                 // < i class = "bi bi-check2-all" > </i>
             } else {
                 $(button).attr("disabled", false);
@@ -63,6 +75,7 @@ $(".unfollowbtn").click(function() {
             if (response) {
                 $(button).data("userId", 0);
                 $(button).text("unfollowed");
+                // $(button).attr("disabled", false);
                 // < i class = "bi bi-check2-all" > </i>
             } else {
                 $(button).attr("disabled", false);
